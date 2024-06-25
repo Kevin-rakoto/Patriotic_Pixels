@@ -3,10 +3,7 @@ import { productData, categoriesData } from "../../static/data";
 import styles from "../../styles/styles";
 import { Link } from "react-router-dom";
 import { IProductData } from "../../static/types/productDataType";
-import {
-  AiOutlineHeart,
-  AiOutlineSearch,
-} from "react-icons/ai";
+import { AiOutlineHeart, AiOutlineSearch } from "react-icons/ai";
 import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
 import { BiMenuAltLeft } from "react-icons/bi";
 import DropDown from "./DropDown";
@@ -15,6 +12,7 @@ import { CgProfile } from "react-icons/cg";
 import { useTypedSelector } from "../../redux/types/hooks";
 import { backend_url } from "../../utils/server";
 import WishList from "../wish-list/WishList";
+import logo from "../../assets/logo_fireneko.png"
 
 type HeaderProps = {
   activeHeading: number;
@@ -54,12 +52,8 @@ const Header: FC<HeaderProps> = ({ activeHeading }) => {
         <div className="hidden 800px:h-[50px] 800px:my-[20px] 800px:flex items-center justify-between">
           <div>
             <Link to="/">
-              {/* when the logo is ready, put it here and removethe h1 below
-                    <img
-                      src=""
-                      alt=""
-        />*/}
-              <div className="flex items-center justify-center h-24 bg-none text-green-600 shadow-md">
+              <div className="flex items-center justify-center h-24 bg-none text-green-600">
+              <img src={logo} alt="NyFireneko's logo" className="object-contain w-10"/>
                 <h1 className="text-3xl font-bold">NyFireneko</h1>
               </div>
             </Link>
@@ -181,7 +175,7 @@ const Header: FC<HeaderProps> = ({ activeHeading }) => {
               </div>
             </div>
 
-              { /* wish list pop-up */}
+            {/* wish list pop-up */}
             {/* wishlist popup */}
             {openWishlist ? (
               <WishList setOpenWishlist={setOpenWishlist} />
