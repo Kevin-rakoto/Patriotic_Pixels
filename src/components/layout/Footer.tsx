@@ -4,6 +4,7 @@ import {
   AiFillYoutube,
   AiOutlineTwitter,
 } from "react-icons/ai";
+import logo from "../../assets/logo_fireneko.png"
 
 const Footer = () => {
   return (
@@ -26,7 +27,8 @@ const Footer = () => {
           </button>
         </div>
         <ul className="px-5 text-center sm:text-start flex sm:block flex-col items-center">
-          <div className="flex items-center justify-center h-24 bg-none text-green-600 shadow-md">
+          <div className="flex items-center justify-center h-24 bg-none text-green-600">
+            <img src={logo} alt="Logo NyFireneko" className="w-10 object-contain" />
             <h1 className="text-3xl font-bold">NyFireneko</h1>
           </div>
           <br />
